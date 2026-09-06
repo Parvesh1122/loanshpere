@@ -1,0 +1,1407 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="LoanSphere - Smart Loan Eligibility Checker. Check your loan eligibility instantly with AI-powered analysis."
+    />
+    <meta
+      name="keywords"
+      content="loan, eligibility, EMI calculator, fintech, loan comparison"
+    />
+    <meta name="author" content="LoanSphere" />
+    <title>LoanSphere | Smart Loan Eligibility Checker</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome 6 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- ==================== LOADING SCREEN ==================== -->
+    <div id="loader-wrapper">
+      <div class="loader-content">
+        <div class="loader-spinner"></div>
+        <div class="loader-logo">
+          <i class="fas fa-hand-holding-usd"></i>
+          <span>LoanSphere</span>
+        </div>
+        <div class="loader-bar">
+          <div class="loader-bar-fill"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== PARTICLES BACKGROUND ==================== -->
+    <div id="particles-js"></div>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="navbar navbar-expand-lg fixed-top glass-nav" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <i class="fas fa-hand-holding-usd brand-icon"></i>
+          <span class="brand-text">Loan</span
+          ><span class="brand-highlight">Sphere</span>
+        </a>
+        <div class="d-flex align-items-center order-lg-3">
+          <button
+            class="theme-toggle me-2"
+            id="themeToggle"
+            aria-label="Toggle theme"
+          >
+            <i class="fas fa-moon"></i>
+          </button>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse order-lg-2" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#checker">Eligibility</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#emi">EMI Calculator</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#banks">Bank Rates</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#recommendation">Recommendations</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#features">Features</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section id="hero" class="hero-section">
+      <div class="container">
+        <div class="row align-items-center min-vh-100">
+          <div
+            class="col-lg-6 hero-content"
+            data-aos="fade-right"
+            data-aos-duration="1000"
+          >
+            <div class="hero-badge">
+              <i class="fas fa-shield-alt"></i>
+              <span>AI-Powered Loan Analysis</span>
+            </div>
+            <h1 class="hero-title">
+              Smart Loan <span class="gradient-text">Eligibility</span> Checker
+            </h1>
+            <p class="hero-subtitle">
+              Experience the future of lending. Get instant AI-powered loan
+              eligibility prediction, compare banks, calculate EMIs, and make
+              informed financial decisions — all in one place.
+            </p>
+            <div class="hero-cta">
+              <a href="#checker" class="btn btn-glow btn-lg">
+                <i class="fas fa-check-circle"></i> Check Eligibility
+              </a>
+              <a href="#emi" class="btn btn-outline-glow btn-lg ms-3">
+                <i class="fas fa-calculator"></i> Calculate EMI
+              </a>
+            </div>
+            <div class="hero-stats mt-4">
+              <div class="stat-item">
+                <span class="stat-number">10K+</span>
+                <span class="stat-label">Loans Processed</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">98%</span>
+                <span class="stat-label">Success Rate</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Partner Banks</span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-6 hero-visual"
+            data-aos="fade-left"
+            data-aos-duration="1000"
+          >
+            <div class="hero-3d-container">
+              <div class="floating-card card-1">
+                <i class="fas fa-coins"></i>
+                <span>Quick Loans</span>
+              </div>
+              <div class="floating-card card-2">
+                <i class="fas fa-chart-line"></i>
+                <span>Low Interest</span>
+              </div>
+              <div class="floating-card card-3">
+                <i class="fas fa-building-columns"></i>
+                <span>Trusted Banks</span>
+              </div>
+              <div class="floating-card card-4">
+                <i class="fas fa-credit-card"></i>
+                <span>Instant Approval</span>
+              </div>
+              <div class="hero-main-card">
+                <div class="hero-card-inner">
+                  <i class="fas fa-hand-holding-heart"></i>
+                  <h3>LoanSphere</h3>
+                  <p>Your Financial Future Starts Here</p>
+                  <div class="hero-card-ring"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-wave">
+        <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+          <path d="M0,50 C320,100 720,0 1440,50 L1440,100 L0,100 Z"></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ==================== LOAN ELIGIBILITY CHECKER ==================== -->
+    <section id="checker" class="section checker-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-badge">Eligibility Check</span>
+          <h2 class="section-title">
+            Check Your <span class="gradient-text">Loan Eligibility</span>
+          </h2>
+          <p class="section-desc">
+            Fill in your details and our AI system will analyze your eligibility
+            instantly.
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-7" data-aos="fade-right">
+            <div class="glass-card checker-form">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label"
+                    ><i class="fas fa-user"></i> Full Name</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control glass-input"
+                    id="fullName"
+                    placeholder="Enter your full name"
+                  />
+                  <div class="invalid-feedback">Please enter your name.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label"
+                    ><i class="fas fa-calendar"></i> Age</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control glass-input"
+                    id="age"
+                    placeholder="Enter your age"
+                    min="18"
+                    max="99"
+                  />
+                  <div class="invalid-feedback">Age must be 18-99.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label"
+                    ><i class="fas fa-money-bill-wave"></i> Monthly Income
+                    (₹)</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control glass-input"
+                    id="monthlyIncome"
+                    placeholder="e.g. 50000"
+                  />
+                  <div class="invalid-feedback">Please enter your income.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label"
+                    ><i class="fas fa-briefcase"></i> Employment Type</label
+                  >
+                  <select class="form-select glass-input" id="employmentType">
+                    <option value="">Select employment type</option>
+                    <option value="salaried">Salaried</option>
+                    <option value="self-employed">Self Employed</option>
+                    <option value="business">Business</option>
+                    <option value="freelancer">Freelancer</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label"
+                    ><i class="fas fa-star"></i> Credit Score</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control glass-input"
+                    id="creditScore"
+                    placeholder="300 - 900"
+                    min="300"
+                    max="900"
+                  />
+                  <div class="invalid-feedback">Score must be 300-900.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label"
+                    ><i class="fas fa-file-invoice"></i> Existing Loans</label
+                  >
+                  <select class="form-select glass-input" id="existingLoans">
+                    <option value="none">None</option>
+                    <option value="one">1 Active Loan</option>
+                    <option value="two">2+ Active Loans</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label"
+                    ><i class="fas fa-calculator"></i> Loan Amount Needed
+                    (₹)</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control glass-input"
+                    id="loanAmount"
+                    placeholder="e.g. 500000"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label"
+                    ><i class="fas fa-clock"></i> Loan Duration (Years)</label
+                  >
+                  <select class="form-select glass-input" id="loanDuration">
+                    <option value="1">1 Year</option>
+                    <option value="2">2 Years</option>
+                    <option value="3">3 Years</option>
+                    <option value="5">5 Years</option>
+                    <option value="7">7 Years</option>
+                    <option value="10">10 Years</option>
+                    <option value="15">15 Years</option>
+                    <option value="20">20 Years</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label"
+                    ><i class="fas fa-piggy-bank"></i> EMI Capacity (₹)</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control glass-input"
+                    id="emiCapacity"
+                    placeholder="e.g. 15000"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label"
+                    ><i class="fas fa-city"></i> City</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control glass-input"
+                    id="city"
+                    placeholder="Enter your city"
+                  />
+                </div>
+                <div class="col-12">
+                  <button
+                    class="btn btn-glow btn-lg w-100 mt-3"
+                    id="checkEligibilityBtn"
+                    onclick="checkEligibility()"
+                  >
+                    <i class="fas fa-robot"></i> Check Eligibility
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5" data-aos="fade-left">
+            <div class="glass-card result-card" id="resultCard">
+              <div class="result-placeholder" id="resultPlaceholder">
+                <i class="fas fa-robot"></i>
+                <h4>AI Analysis Ready</h4>
+                <p>
+                  Fill in the form and click "Check Eligibility" to get your
+                  instant result.
+                </p>
+              </div>
+              <div class="result-content d-none" id="resultContent">
+                <div class="result-header">
+                  <div class="result-status" id="resultStatus">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Eligible</span>
+                  </div>
+                  <div class="result-percentage" id="resultPercentage">
+                    <div class="percentage-ring">
+                      <svg>
+                        <defs>
+                          <linearGradient
+                            id="ringGradient"
+                            x1="0%"
+                            y1="0%"
+                            x2="100%"
+                            y2="100%"
+                          >
+                            <stop offset="0%" stop-color="#667eea" />
+                            <stop offset="100%" stop-color="#764ba2" />
+                          </linearGradient>
+                        </defs>
+                        <circle cx="40" cy="40" r="35"></circle>
+                        <circle
+                          cx="40"
+                          cy="40"
+                          r="35"
+                          id="percentageCircle"
+                          stroke="url(#ringGradient)"
+                        ></circle>
+                      </svg>
+                      <span id="percentageText">0%</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="result-details mt-3">
+                  <div class="result-item">
+                    <span>Approval Amount</span>
+                    <strong id="suggestedAmount">₹0</strong>
+                  </div>
+                  <div class="result-item">
+                    <span>Risk Level</span>
+                    <strong id="riskLevel" class="text-success"
+                      >Low Risk</strong
+                    >
+                  </div>
+                  <div class="result-item">
+                    <span>Suggested Rate</span>
+                    <strong id="suggestedRate">8.5%</strong>
+                  </div>
+                </div>
+                <div class="result-actions mt-3">
+                  <button
+                    class="btn btn-sm btn-glow me-2"
+                    onclick="downloadPDF()"
+                  >
+                    <i class="fas fa-file-pdf"></i> Download Report
+                  </button>
+                  <button
+                    class="btn btn-sm btn-outline-glow"
+                    onclick="speakResult()"
+                  >
+                    <i class="fas fa-volume-up"></i> Listen
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== EMI CALCULATOR ==================== -->
+    <section id="emi" class="section emi-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-badge">Calculator</span>
+          <h2 class="section-title">
+            EMI <span class="gradient-text">Calculator</span>
+          </h2>
+          <p class="section-desc">
+            Plan your monthly payments with our real-time EMI calculator.
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-5" data-aos="fade-right">
+            <div class="glass-card emi-form">
+              <div class="mb-4">
+                <label class="form-label"
+                  ><i class="fas fa-coins"></i> Loan Amount:
+                  <strong id="emiAmountDisplay">₹10,00,000</strong></label
+                >
+                <input
+                  type="range"
+                  class="form-range"
+                  id="emiLoanAmount"
+                  min="100000"
+                  max="10000000"
+                  step="10000"
+                  value="1000000"
+                />
+                <div class="d-flex justify-content-between">
+                  <small>₹1,00,000</small><small>₹1,00,00,000</small>
+                </div>
+              </div>
+              <div class="mb-4">
+                <label class="form-label"
+                  ><i class="fas fa-percent"></i> Interest Rate:
+                  <strong id="emiRateDisplay">8.5%</strong></label
+                >
+                <input
+                  type="range"
+                  class="form-range"
+                  id="emiRate"
+                  min="5"
+                  max="20"
+                  step="0.1"
+                  value="8.5"
+                />
+                <div class="d-flex justify-content-between">
+                  <small>5%</small><small>20%</small>
+                </div>
+              </div>
+              <div class="mb-4">
+                <label class="form-label"
+                  ><i class="fas fa-clock"></i> Tenure:
+                  <strong id="emiTenureDisplay">5 Years</strong></label
+                >
+                <input
+                  type="range"
+                  class="form-range"
+                  id="emiTenure"
+                  min="1"
+                  max="30"
+                  step="1"
+                  value="5"
+                />
+                <div class="d-flex justify-content-between">
+                  <small>1 Year</small><small>30 Years</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-7" data-aos="fade-left">
+            <div class="glass-card emi-result-card">
+
+              <!-- Simple Interest Section -->
+              <div class="emi-subsection">
+                <span class="section-badge" style="margin-bottom:12px;">
+                  <i class="fas fa-percent"></i> Simple Interest (Flat Rate)
+                </span>
+                <div class="row g-2 mb-3">
+                  <div class="col-4">
+                    <div class="emi-metric">
+                      <span class="metric-label">Simple Interest</span>
+                      <span class="metric-value gradient-text" id="simpleInterest">₹0</span>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="emi-metric">
+                      <span class="metric-label">Per Year</span>
+                      <span class="metric-value" id="simplePerYear">₹0</span>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="emi-metric">
+                      <span class="metric-label">Total w/ Simple Interest</span>
+                      <span class="metric-value" id="totalSimpleAmount">₹0</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <hr class="border-glass my-3">
+
+              <!-- EMI (Reducing Balance) Section -->
+              <div class="emi-subsection">
+                <span class="section-badge" style="margin-bottom:12px;">
+                  <i class="fas fa-calculator"></i> EMI (Reducing Balance)
+                </span>
+                <div class="row g-2 mb-3">
+                  <div class="col-4">
+                    <div class="emi-metric">
+                      <span class="metric-label">Monthly EMI</span>
+                      <span class="metric-value gradient-text" id="monthlyEMI">₹0</span>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="emi-metric">
+                      <span class="metric-label">Total Interest (RB)</span>
+                      <span class="metric-value" id="totalInterest">₹0</span>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="emi-metric">
+                      <span class="metric-label">Total Amount (RB)</span>
+                      <span class="metric-value" id="totalAmount">₹0</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="chart-container">
+                <canvas id="emiChart"></canvas>
+              </div>
+              <div class="progress-container mt-3">
+                <div class="progress-label">
+                  <span>Principal</span>
+                  <span>Interest (RB)</span>
+                </div>
+                <div class="progress glass-progress" id="emiProgressTrack">
+                  <div class="progress-bar progress-principal" id="principalBar" style="width:0%"></div>
+                  <div class="progress-bar progress-interest" id="interestBar" style="width:0%"></div>
+                </div>
+              </div>
+              <div class="emi-breakdown mt-3">
+                <span><i class="fas fa-circle text-primary"></i> Principal: <strong id="principalAmount">₹0</strong></span>
+                <span><i class="fas fa-circle text-warning"></i> Interest (RB): <strong id="interestAmount">₹0</strong></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== BANK INTEREST RATES ==================== -->
+    <section id="banks" class="section banks-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-badge">Bank Rates</span>
+          <h2 class="section-title">
+            Compare <span class="gradient-text">Bank Interest Rates</span>
+          </h2>
+          <p class="section-desc">
+            Find the best loan deals from top banks in India.
+          </p>
+        </div>
+      <div class="bank-controls" data-aos="fade-up">
+        <div class="row align-items-center g-3">
+          <div class="col-md-5">
+            <div class="bank-search">
+              <i class="fas fa-search"></i>
+              <input type="text" class="form-control glass-input" id="bankSearch" placeholder="Search banks..." oninput="filterBanks()">
+            </div>
+          </div>
+          <div class="col-md-2">
+            <select class="form-select glass-input" id="bankFilter" onchange="filterBanks()">
+              <option value="all">All Banks</option>
+              <option value="public">Public Sector</option>
+              <option value="private">Private Sector</option>
+            </select>
+          </div>
+          <div class="col-md-2">
+            <select class="form-select glass-input" id="bankSort" onchange="sortBanks()">
+              <option value="rate-asc">Interest: Low to High</option>
+              <option value="rate-desc">Interest: High to Low</option>
+              <option value="name">Name: A-Z</option>
+            </select>
+          </div>
+          <div class="col-md-3 text-end">
+            <button class="btn btn-glow btn-sm" id="refreshRatesBtn" onclick="loadBankRates()">
+              <i class="fas fa-sync-alt"></i> Refresh Rates
+            </button>
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-12">
+            <small class="text-muted" id="lastUpdatedBadge">
+              <i class="fas fa-circle text-success" style="font-size:0.5rem;vertical-align:middle;"></i>
+              Rates update automatically from live sources
+            </small>
+          </div>
+        </div>
+      </div>
+      <div class="row g-4 mt-2" id="bankCardsContainer">
+        <!-- Bank cards loaded via JS -->
+      </div>
+      </div>
+    </section>
+
+    <!-- ==================== LOAN RECOMMENDATION ==================== -->
+    <section id="recommendation" class="section recommendation-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-badge">Recommendations</span>
+          <h2 class="section-title">
+            Smart <span class="gradient-text">Recommendations</span>
+          </h2>
+          <p class="section-desc">
+            Personalized loan suggestions based on your profile.
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4" data-aos="fade-up">
+            <div class="glass-card rec-card">
+              <div class="rec-icon">
+                <i class="fas fa-building-columns"></i>
+              </div>
+              <h4>Best Banks For You</h4>
+              <div id="bestBanksList">
+                <p class="text-muted">
+                  Check eligibility to get recommendations.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="glass-card rec-card">
+              <div class="rec-icon"><i class="fas fa-calendar-check"></i></div>
+              <h4>Safest EMI Plan</h4>
+              <div id="safestEMIPlan">
+                <p class="text-muted">
+                  Check eligibility to see your safest EMI plan.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="glass-card rec-card">
+              <div class="rec-icon"><i class="fas fa-lightbulb"></i></div>
+              <h4>Financial Tips</h4>
+              <div id="financialTips">
+                <ul class="tips-list">
+                  <li>
+                    <i class="fas fa-check-circle text-success"></i> Maintain a
+                    credit score above 750
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle text-success"></i> Keep DTI
+                    ratio below 40%
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle text-success"></i> Pay
+                    existing EMIs on time
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle text-success"></i> Compare
+                    rates before applying
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle text-success"></i> Choose
+                    shorter tenure for lower interest
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FEATURES SECTION ==================== -->
+    <section id="features" class="section features-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-badge">Why Us</span>
+          <h2 class="section-title">
+            Powerful <span class="gradient-text">Features</span>
+          </h2>
+          <p class="section-desc">
+            Everything you need to make smart financial decisions.
+          </p>
+        </div>
+        <div class="row g-4">
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="flip-left"
+            data-aos-delay="0"
+          >
+            <div class="feature-card glass-card">
+              <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+              <h4>Instant Approval</h4>
+              <p>
+                Get loan approval decisions within minutes with our AI-powered
+                system.
+              </p>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="flip-left"
+            data-aos-delay="100"
+          >
+            <div class="feature-card glass-card">
+              <div class="feature-icon"><i class="fas fa-brain"></i></div>
+              <h4>AI Eligibility Check</h4>
+              <p>
+                Advanced algorithms analyze your financial profile for accurate
+                results.
+              </p>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="flip-left"
+            data-aos-delay="200"
+          >
+            <div class="feature-card glass-card">
+              <div class="feature-icon">
+                <i class="fas fa-shield-halved"></i>
+              </div>
+              <h4>Secure Data</h4>
+              <p>Your data is encrypted with bank-grade security protocols.</p>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="flip-left"
+            data-aos-delay="300"
+          >
+            <div class="feature-card glass-card">
+              <div class="feature-icon"><i class="fas fa-gauge-high"></i></div>
+              <h4>Fast Processing</h4>
+              <p>
+                Lightning-fast calculations and instant results at your
+                fingertips.
+              </p>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="flip-left"
+            data-aos-delay="400"
+          >
+            <div class="feature-card glass-card">
+              <div class="feature-icon"><i class="fas fa-percent"></i></div>
+              <h4>Lowest Interest Rates</h4>
+              <p>
+                Compare and get the most competitive interest rates from top
+                banks.
+              </p>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="flip-left"
+            data-aos-delay="500"
+          >
+            <div class="feature-card glass-card">
+              <div class="feature-icon"><i class="fas fa-headset"></i></div>
+              <h4>24/7 Support</h4>
+              <p>
+                Round-the-clock support to assist you with your loan journey.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== STATISTICS SECTION ==================== -->
+    <section class="section stats-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-badge">Our Impact</span>
+          <h2 class="section-title">
+            LoanSphere by the <span class="gradient-text">Numbers</span>
+          </h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="0">
+            <div class="stat-card glass-card">
+              <div class="stat-icon"><i class="fas fa-file-invoice"></i></div>
+              <div class="stat-number">
+                <span class="counter" data-target="50000">0</span>+
+              </div>
+              <div class="stat-label">Loans Approved</div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+            <div class="stat-card glass-card">
+              <div class="stat-icon"><i class="fas fa-user-check"></i></div>
+              <div class="stat-number">
+                <span class="counter" data-target="25000">0</span>+
+              </div>
+              <div class="stat-label">Happy Customers</div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+            <div class="stat-card glass-card">
+              <div class="stat-icon">
+                <i class="fas fa-building-columns"></i>
+              </div>
+              <div class="stat-number">
+                <span class="counter" data-target="50">0</span>+
+              </div>
+              <div class="stat-label">Partner Banks</div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
+            <div class="stat-card glass-card">
+              <div class="stat-icon"><i class="fas fa-chart-simple"></i></div>
+              <div class="stat-number">
+                <span class="counter" data-target="98">0</span>%
+              </div>
+              <div class="stat-label">Success Rate</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TESTIMONIALS SECTION ==================== -->
+    <section class="section testimonials-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-badge">Testimonials</span>
+          <h2 class="section-title">
+            What Our <span class="gradient-text">Customers Say</span>
+          </h2>
+          <p class="section-desc">
+            Real stories from real customers who achieved their dreams.
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+            <div class="testimonial-card glass-card">
+              <div class="testimonial-stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+              </div>
+              <p class="testimonial-text">
+                LoanSphere made the entire loan process so simple. I got my home
+                loan approved in just 2 days! The EMI calculator helped me plan
+                perfectly.
+              </p>
+              <div class="testimonial-user">
+                <div
+                  class="testimonial-avatar"
+                  style="background: linear-gradient(135deg, #667eea, #764ba2)"
+                >
+                  R
+                </div>
+                <div>
+                  <h6>Rahul Sharma</h6>
+                  <small>Home Loan, Mumbai</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="testimonial-card glass-card">
+              <div class="testimonial-stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+              </div>
+              <p class="testimonial-text">
+                The bank comparison feature is amazing! I saved over ₹2 lakh in
+                interest by choosing the right bank through LoanSphere's
+                recommendations.
+              </p>
+              <div class="testimonial-user">
+                <div
+                  class="testimonial-avatar"
+                  style="background: linear-gradient(135deg, #f093fb, #f5576c)"
+                >
+                  P
+                </div>
+                <div>
+                  <h6>Priya Patel</h6>
+                  <small>Education Loan, Ahmedabad</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="testimonial-card glass-card">
+              <div class="testimonial-stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+              </div>
+              <p class="testimonial-text">
+                As a freelancer, I thought getting a loan would be tough.
+                LoanSphere's AI eligibility checker found options that suited my
+                profile perfectly!
+              </p>
+              <div class="testimonial-user">
+                <div
+                  class="testimonial-avatar"
+                  style="background: linear-gradient(135deg, #4facfe, #00f2fe)"
+                >
+                  A
+                </div>
+                <div>
+                  <h6>Arun Kumar</h6>
+                  <small>Business Loan, Bangalore</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FAQ SECTION ==================== -->
+    <section id="faq" class="section faq-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-badge">FAQ</span>
+          <h2 class="section-title">
+            Frequently Asked <span class="gradient-text">Questions</span>
+          </h2>
+          <p class="section-desc">Got questions? We've got answers.</p>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-8" data-aos="fade-up">
+            <div class="accordion" id="faqAccordion">
+              <div class="accordion-item glass-card">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#faq1"
+                  >
+                    <i class="fas fa-question-circle me-2"></i> What is a credit
+                    score and why is it important?
+                  </button>
+                </h2>
+                <div
+                  id="faq1"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    A credit score is a 3-digit number (300-900) that represents
+                    your creditworthiness. It's based on your credit history,
+                    repayment behavior, and existing debts. A higher score
+                    improves your chances of loan approval and gets you better
+                    interest rates. Scores above 750 are considered excellent.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item glass-card">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#faq2"
+                  >
+                    <i class="fas fa-question-circle me-2"></i> How is EMI
+                    calculated?
+                  </button>
+                </h2>
+                <div
+                  id="faq2"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    EMI (Equated Monthly Installment) is calculated using the
+                    formula: EMI = [P x R x (1+R)^N] / [(1+R)^N-1], where P is
+                    the loan amount, R is the monthly interest rate, and N is
+                    the number of monthly installments. Use our EMI calculator
+                    above to get instant calculations.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item glass-card">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#faq3"
+                  >
+                    <i class="fas fa-question-circle me-2"></i> What documents
+                    are needed for a loan application?
+                  </button>
+                </h2>
+                <div
+                  id="faq3"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    Typically, you need: identity proof (Aadhaar/PAN), address
+                    proof, income documents (salary slips/IT returns), bank
+                    statements of last 3-6 months, and passport-size
+                    photographs. Requirements may vary by bank and loan type.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item glass-card">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#faq4"
+                  >
+                    <i class="fas fa-question-circle me-2"></i> Can I get a loan
+                    with a low credit score?
+                  </button>
+                </h2>
+                <div
+                  id="faq4"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    Yes, but options may be limited. Some NBFCs and banks offer
+                    loans to individuals with scores as low as 550, but at
+                    higher interest rates. Improving your credit score before
+                    applying can help you get better terms.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item glass-card">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#faq5"
+                  >
+                    <i class="fas fa-question-circle me-2"></i> What is the
+                    difference between fixed and floating interest rates?
+                  </button>
+                </h2>
+                <div
+                  id="faq5"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    Fixed rates remain constant throughout the loan tenure,
+                    providing predictable EMIs. Floating rates change with
+                    market conditions, which can lower your EMI when rates drop
+                    but increase them when rates rise. Floating rates are
+                    usually lower initially.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item glass-card">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#faq6"
+                  >
+                    <i class="fas fa-question-circle me-2"></i> How can I
+                    improve my loan eligibility?
+                  </button>
+                </h2>
+                <div
+                  id="faq6"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    Improve your credit score by paying bills on time, reduce
+                    existing debt, maintain a stable income, choose a longer
+                    tenure to reduce EMI burden, and add a co-applicant with
+                    good credit to strengthen your application.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-badge">Contact</span>
+          <h2 class="section-title">
+            Get In <span class="gradient-text">Touch</span>
+          </h2>
+          <p class="section-desc">
+            Have questions? We'd love to hear from you.
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="glass-card contact-form-card">
+              <form id="contactForm" onsubmit="return handleContact(event);">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <input
+                      type="text"
+                      class="form-control glass-input"
+                      id="contactName"
+                      placeholder="Your Name"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <input
+                      type="email"
+                      class="form-control glass-input"
+                      id="contactEmail"
+                      placeholder="Your Email"
+                      required
+                    />
+                  </div>
+                  <div class="col-12">
+                    <input
+                      type="text"
+                      class="form-control glass-input"
+                      id="contactSubject"
+                      placeholder="Subject"
+                      required
+                    />
+                  </div>
+                  <div class="col-12">
+                    <textarea
+                      class="form-control glass-input"
+                      id="contactMessage"
+                      rows="4"
+                      placeholder="Your Message"
+                      required
+                    ></textarea>
+                  </div>
+                  <div class="col-12">
+                    <button type="submit" class="btn btn-glow w-100">
+                      <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="glass-card contact-info-card">
+              <div class="contact-info-item">
+                <div class="contact-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div>
+                  <h6>Our Location</h6>
+                  <p>Chandigarh, Punjab, India</p>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                <div>
+                  <h6>Email Us</h6>
+                  <p>hello@loansphere.in</p>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                <div>
+                  <h6>Call Us</h6>
+                  <p>+91 1800-123-4567</p>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                <div>
+                  <h6>Working Hours</h6>
+                  <p>Mon - Sat: 9:00 AM - 7:00 PM</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== NEWSLETTER SECTION ==================== -->
+    <section class="section newsletter-section">
+      <div class="container">
+        <div class="newsletter-card glass-card" data-aos="zoom-in">
+          <div class="row align-items-center">
+            <div class="col-lg-6">
+              <h3>
+                <i class="fas fa-envelope-open-text"></i> Subscribe to Our
+                Newsletter
+              </h3>
+              <p>
+                Get the latest loan trends, financial tips, and exclusive offers
+                directly in your inbox.
+              </p>
+            </div>
+            <div class="col-lg-6">
+              <form
+                class="newsletter-form"
+                onsubmit="return handleNewsletter(event);"
+              >
+                <div class="input-group">
+                  <input
+                    type="email"
+                    class="form-control glass-input"
+                    placeholder="Enter your email"
+                    required
+                  />
+                  <button class="btn btn-glow" type="submit">Subscribe</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <a class="footer-brand" href="#">
+              <i class="fas fa-hand-holding-usd"></i> LoanSphere
+            </a>
+            <p class="footer-text">
+              Your trusted partner for smart loan decisions. We help you find
+              the best loan options with AI-powered analysis and real-time
+              comparisons.
+            </p>
+            <div class="social-links">
+              <a href="#" class="social-link"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h6 class="footer-heading">Quick Links</h6>
+            <ul class="footer-links">
+              <li><a href="#hero">Home</a></li>
+              <li><a href="#checker">Eligibility</a></li>
+              <li><a href="#emi">EMI Calculator</a></li>
+              <li><a href="#banks">Bank Rates</a></li>
+              <li><a href="#features">Features</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h6 class="footer-heading">Resources</h6>
+            <ul class="footer-links">
+              <li><a href="#faq">FAQ</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Sitemap</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-4">
+            <h6 class="footer-heading">Newsletter</h6>
+            <p>Subscribe for financial tips and updates.</p>
+            <form
+              class="footer-newsletter"
+              onsubmit="return handleNewsletter(event);"
+            >
+              <div class="input-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Your email"
+                />
+                <button class="btn btn-glow" type="submit">
+                  <i class="fas fa-arrow-right"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2026 LoanSphere. All rights reserved. | Made with
+            <i class="fas fa-heart text-danger"></i> for smarter lending
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ==================== CHATBOT FLOATING ICON ==================== -->
+    <div class="chatbot-toggle" id="chatbotToggle" onclick="toggleChatbot()">
+      <i class="fas fa-comment-dots"></i>
+    </div>
+    <div class="chatbot-window glass-card" id="chatbotWindow">
+      <div class="chatbot-header">
+        <i class="fas fa-robot"></i>
+        <span>LoanSphere Assistant</span>
+        <button class="btn btn-sm btn-ghost" onclick="toggleChatbot()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="chatbot-body" id="chatbotBody">
+        <div class="chatbot-message bot">
+          <div class="chatbot-msg">
+            Hi! I'm LoanSphere AI Assistant. How can I help you today?
+          </div>
+        </div>
+      </div>
+      <div class="chatbot-footer">
+        <input
+          type="text"
+          class="form-control"
+          id="chatbotInput"
+          placeholder="Type a message..."
+          onkeypress="if (event.key === 'Enter') sendChatbotMessage();"
+        />
+        <button class="btn btn-glow btn-sm" onclick="sendChatbotMessage()">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- ==================== VOICE ASSISTANT BUTTON ==================== -->
+    <div
+      class="voice-assistant"
+      id="voiceAssistant"
+      onclick="startVoiceAssistant()"
+    >
+      <i class="fas fa-microphone"></i>
+    </div>
+
+    <!-- ==================== SCROLL TO TOP ==================== -->
+    <div
+      class="scroll-to-top"
+      id="scrollToTop"
+      onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+    >
+      <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <!-- ==================== TOAST CONTAINER ==================== -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
